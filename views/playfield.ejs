@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel="stylesheet" href="/game/style.css">
+    </head>
+
+    <body> 
+        <UI> 
+            <my-timer time-max="10"></my-timer>
+
+            <winner-screen><% if(result){ %> Spieler hat gewonnen <% } %></winner-screen>
+        </UI>
+        
+        <form method="post">
+            <input type="hidden" name="index">
+ 
+            <playfield>
+                <column>
+                    <my-box index="0" id="b1"><%= game.getSymbol(0) %></my-box>
+                    <my-box index="3" id="b2"><%= game.getSymbol(3) %></my-box>
+                    <my-box index="6" id="b3"><%= game.getSymbol(6) %></my-box>
+                </column>
+                <column>
+                    <my-box index="1" id="b4"><%= game.getSymbol(1) %></my-box>
+                    <my-box index="4" id="b5"><%= game.getSymbol(4) %></my-box>
+                    <my-box index="7" id="b6"><%= game.getSymbol(7) %></my-box>
+                </column>
+                <column>
+                    <my-box index="2" id="b7"><%= game.getSymbol(2) %></my-box>
+                    <my-box index="5" id="b8"><%= game.getSymbol(5) %></my-box>
+                    <my-box index="8" id="b9"><%= game.getSymbol(8) %></my-box>
+                </column>
+            </playfield>
+        </form>
+        <script src="/game/tictactoe.js"></script>
+        <script src="/game/tictactoeUI.js"></script>
+    </body>
+</html>
