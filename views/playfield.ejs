@@ -9,6 +9,8 @@
         <UI> 
             <my-timer time-max="10"></my-timer>
 
+            <current-player>Spieler <%= game.playerInTurn %> ist dran. Du bist Spieler <%= player %></current-player>
+
             <winner-screen><% if(result){ %> Spieler hat gewonnen <% } %></winner-screen>
         </UI>
         
