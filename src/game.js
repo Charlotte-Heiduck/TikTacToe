@@ -9,20 +9,32 @@ class Game {
         }
         this.width = 3;
         this.height = 3;
+        this.playerWebsockets={
+            1:undefined, 2:undefined
+        }
+        this.playerInTurn = 1;
     }
 
+setWs(player, ws){
+    this.playerWebsockets[player] = ws;
+}
+
+getWs(player){
+    return this.playerWebsockets[player];
+}
+
+isNextPlayer(player) {
+    return this.playerInTurn == player;
+}
     onClick(indexPost, player) {
 
         this.changeSymbol(parseInt(indexPost), player);
-        console.log("L game");
-        
+        this.playerInTurn ^= 3;
+        console.log ("playerInTurn = ", this.playerInTurn);
     }
 
     changeSymbol(indexNew, playerInTurn){ 
-        console.log("post:", indexNew);
         this.fields[indexNew] = playerInTurn;
-        
-        console.log("arr: ", this.fields);
     }
 
     setField(index, symbol) {
@@ -82,7 +94,6 @@ class Game {
                 return true
             }
         }
-        console.log("not won");
         return false;
     
     }

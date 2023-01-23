@@ -32,26 +32,48 @@ app.ws('/lobby', function (ws, req) {
 
   ws.on('message', function (msg) {
     ws.send(msg);
+
+  });
+});
+
+app.ws('/playfield/:id/:player', function (ws, req) {
+  console.log("playfield: connection created");
+  const game = games.get(req.params.id);
+  game.setWs(req.params.player, ws);
+  ws.on('message', function (msg) {
+    ws.send(msg);
     console.log("ws recieved", msg);
   });
 });
 
 app.get('/playfield/:id/:player', function (req, res) {
   const game = games.get(req.params.id);
-  res.render('playfield', { game, result: false });
+  console.log("GET playfield")
+  console.log ("game.playerInTurn:", game.playerInTurn);
+  console.log ("current player:", req.params.player);
+  res.render('playfield', { game, result: false, player:req.params.player});
 });
 
 app.get('/lobby', function (req, res) {
   res.render('lobby', {});
 });
 
+function informOtherPlayer(game, player){
+  const otherPlayer = player ^3;
+  const ws = game.getWs(otherPlayer);
+  ws.send("game update");
+}
+
 app.post('/playfield/:id/:player', function (req, res) {
-  console.log("req", req.body.index);
   const game = games.get(req.params.id);
   const player = parseInt(req.params.player);
   game.onClick(req.body.index, player);
   let result = game.winCheck(player);
-  res.render('playfield', { game, result });
+  informOtherPlayer (game, player);
+  console.log ("POST playfield");
+  console.log ("game.playerInTurn:", game.playerInTurn);
+  console.log ("current player:", req.params.player);
+  res.render('playfield', { game, result,player:req.params.player });
 });
 
 app.listen(port, () => {

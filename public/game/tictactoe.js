@@ -10,7 +10,9 @@ class MyBox extends HTMLElement {
         console.log("CLICKED", this);
         console.log("Index: ", index);
         console.log("Form: ", form);
-
+        if (form.getAttribute("disabled")!= null){
+            return
+        }
         let input = form.querySelector("input");
         input.value = index;
         
@@ -21,3 +23,19 @@ class MyBox extends HTMLElement {
 
 
 window.customElements.define("my-box", MyBox);
+function connectWs (){
+    console.log("conecting websocket");
+
+    const socket = new WebSocket("ws://"+location.host+location.pathname);
+    socket.addEventListener("open", (event) => {
+        console.log("socket now open");
+    });
+    socket.addEventListener("message", (event) => {
+        console.log("Message from server ", event.data);
+        location = location.href;
+    });
+
+    console.log("socket: ", WebSocket.readyState)
+}
+
+connectWs();

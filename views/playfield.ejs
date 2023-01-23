@@ -12,7 +12,7 @@
             <winner-screen><% if(result){ %> Spieler hat gewonnen <% } %></winner-screen>
         </UI>
         
-        <form method="post">
+        <form method="post" <% if (!game.isNextPlayer(player)){%> disabled <%}%>>
             <input type="hidden" name="index">
  
             <playfield>
