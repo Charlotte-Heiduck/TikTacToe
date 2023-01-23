@@ -1,4 +1,5 @@
 let button = document.getElementById("button");
+let text = document.getElementById("text-spielersuche");
 
 button.addEventListener("click", () => {
     console.log("button: clicked");
@@ -14,6 +15,9 @@ button.addEventListener("click", () => {
         const url = "/playfield/"+gameinfo.gameId+"/"+gameinfo.player;
         location.href = url;
     });
+
+    button.setAttribute("disabled", "");
+    text.classList.remove("hidden");
 
     console.log("socket: ", WebSocket.readyState)
 })
