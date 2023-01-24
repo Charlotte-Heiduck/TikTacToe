@@ -1,3 +1,5 @@
+let text = document.getElementById("text-feld-besetzt");
+
 class MyBox extends HTMLElement {
     connectedCallback() {
         console.log("connected");
@@ -5,19 +7,31 @@ class MyBox extends HTMLElement {
     }
     clicked() {
 
+
+        // färbung gewinnerboxen hier hin oder so
+        
         let index = this.getAttribute("index");
         let form = this.closest("form");
-        console.log("CLICKED", this);
-        console.log("Index: ", index);
-        console.log("Form: ", form);
-        if (form.getAttribute("disabled")!= null){
-            return
-        }
-        let input = form.querySelector("input");
-        input.value = index;
+        let symbol = this.getAttribute("symbol");
         
+        console.log("CLICKED", this);
+        console.log("Symbol:", symbol);
 
-        form.submit();
+            if (symbol == ""){
+                if (form.getAttribute("disabled")!= null){
+                    return
+                }
+                text.style.visibility = "hidden";
+                let input = form.querySelector("input");
+                input.value = index;
+                
+                form.submit();
+            }
+            else{
+                console.log("filled");
+                text.style.visibility = "visible";
+            }
+        
     }
 }
 

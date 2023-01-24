@@ -48,9 +48,6 @@ app.ws('/playfield/:id/:player', function (ws, req) {
 
 app.get('/playfield/:id/:player', function (req, res) {
   const game = games.get(req.params.id);
-  console.log("GET playfield")
-  console.log ("game.playerInTurn:", game.playerInTurn);
-  console.log ("current player:", req.params.player);
   res.render('playfield', { game, result: false, player:req.params.player});
 });
 
@@ -70,9 +67,6 @@ app.post('/playfield/:id/:player', function (req, res) {
   game.onClick(req.body.index, player);
   let result = game.winCheck(player);
   informOtherPlayer (game, player);
-  console.log ("POST playfield");
-  console.log ("game.playerInTurn:", game.playerInTurn);
-  console.log ("current player:", req.params.player);
   res.render('playfield', { game, result,player:req.params.player });
 });
 
