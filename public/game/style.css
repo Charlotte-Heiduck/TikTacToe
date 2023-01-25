@@ -21,7 +21,7 @@ playfield {
 
 /* used to set the background of the winning boxes to green*/
 .winning-box {
-    background-color: rgb(55, 255, 0);
+    background-color: rgb(243, 196, 116);
 }
 
 UI {

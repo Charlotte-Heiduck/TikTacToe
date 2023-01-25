@@ -38,21 +38,11 @@ app.ws('/lobby', function (ws, req) {
     // puts the player in the waiting list
     waitingPlayers.push(ws)
   }
-
-  ws.on('message', function (msg) {
-    ws.send(msg);
-
-  });
 });
 
 app.ws('/playfield/:id/:player', function (ws, req) {
-  console.log("playfield: connection created");
   const game = games.get(req.params.id);
   game.setWs(req.params.player, ws);
-  ws.on('message', function (msg) {
-    ws.send(msg);
-    console.log("ws recieved", msg);
-  });
 });
 
 app.get('/playfield/:id/:player', function (req, res) {
