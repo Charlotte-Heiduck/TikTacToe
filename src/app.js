@@ -1,6 +1,6 @@
 const e = require('express');
 const express = require('express')
-const app = express()
+const app = express();
 const expressWs = require('express-ws')(app);
 const port = 3000
 const Game = require("./game.js");
@@ -65,7 +65,7 @@ app.post('/playfield/:id/:player', function (req, res) {
   const game = games.get(req.params.id);
   const player = parseInt(req.params.player);
   game.onClick(req.body.index, player);
-  let result = game.winCheck(player);
+  let result = game.winCheck(player).result;
   informOtherPlayer (game, player);
   res.render('playfield', { game, result,player:req.params.player });
 });

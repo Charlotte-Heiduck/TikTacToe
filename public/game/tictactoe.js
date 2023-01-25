@@ -1,15 +1,26 @@
 let text = document.getElementById("text-feld-besetzt");
 
+
 class MyBox extends HTMLElement {
     connectedCallback() {
         console.log("connected");
         this.addEventListener("click", this.clicked.bind(this));
+
+        let index = this.getAttribute("index");
+        let winnerBoxes = this.getAttribute("winnerBoxes");
+        console.log("Boxes EJS: ", winnerBoxes);
+
+        if(winnerBoxes.includes(index)){
+            console.log(index, "is included")
+            this.style.background =  "#00eeff";
+        }
+        else{
+            console.log(index, "is not included");
+        }
+    
     }
     clicked() {
 
-
-        // färbung gewinnerboxen hier hin oder so
-        
         let index = this.getAttribute("index");
         let form = this.closest("form");
         let symbol = this.getAttribute("symbol");
@@ -31,6 +42,9 @@ class MyBox extends HTMLElement {
                 console.log("filled");
                 text.style.visibility = "visible";
             }
+
+            
+
         
     }
 }

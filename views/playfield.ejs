@@ -11,29 +11,29 @@
 
             <current-player>Spieler <%= game.playerInTurn %> ist dran. Du bist Spieler <%= player %></current-player>
 
-            <winner-screen><% if(game.winCheck(player)){ %> hat gewonnen <% } %></winner-screen>
+            <winner-screen><% if(game.winCheck(player).result){ %> ... hat gewonnen <% } %></winner-screen>
         </UI>
-            <form method="post" <% if (!game.isNextPlayer(player) || (game.winCheck(1) || game.winCheck(2))){%> disabled <%}%>>
+            <form method="post" <% if (!game.isNextPlayer(player) || (game.winCheck(1).result || game.winCheck(2).result)){%> disabled <%}%>>
                 <input type="hidden" name="index">
                 
                 <playfield>
                     <column>
-                        <my-box index="0" id="b1" symbol="<%= game.getSymbol(0) %>"><%= game.getSymbol(0) %></my-box>
-                        <my-box index="3" id="b2" symbol="<%= game.getSymbol(3) %>"><%= game.getSymbol(3) %></my-box>
-                        <my-box index="6" id="b3" symbol="<%= game.getSymbol(6) %>"><%= game.getSymbol(6) %></my-box>
+                        <my-box index="0" id="b1" winnerBoxes="<%= game.winCheck(player).winningBoxes %>" symbol="<%= game.getSymbol(0) %>"><%= game.getSymbol(0) %></my-box>
+                        <my-box index="3" id="b2" winnerBoxes="<%= game.winCheck(player).winningBoxes %>" symbol="<%= game.getSymbol(3) %>"><%= game.getSymbol(3) %></my-box>
+                        <my-box index="6" id="b3" winnerBoxes="<%= game.winCheck(player).winningBoxes %>" symbol="<%= game.getSymbol(6) %>"><%= game.getSymbol(6) %></my-box>
                     </column>
                     <column>
-                        <my-box index="1" id="b4" symbol="<%= game.getSymbol(1) %>"><%= game.getSymbol(1) %></my-box>
-                        <my-box index="4" id="b5" symbol="<%= game.getSymbol(4) %>"><%= game.getSymbol(4) %></my-box>
-                        <my-box index="7" id="b6" symbol="<%= game.getSymbol(7) %>"><%= game.getSymbol(7) %></my-box>
+                        <my-box index="1" id="b4" winnerBoxes="<%= game.winCheck(player).winningBoxes %>" symbol="<%= game.getSymbol(1) %>"><%= game.getSymbol(1) %></my-box>
+                        <my-box index="4" id="b5" winnerBoxes="<%= game.winCheck(player).winningBoxes %>" symbol="<%= game.getSymbol(4) %>"><%= game.getSymbol(4) %></my-box>
+                        <my-box index="7" id="b6" winnerBoxes="<%= game.winCheck(player).winningBoxes %>" symbol="<%= game.getSymbol(7) %>"><%= game.getSymbol(7) %></my-box>
                     </column>
                     <column>
-                        <my-box index="2" id="b7" symbol="<%= game.getSymbol(2) %>"><%= game.getSymbol(2) %></my-box>
-                        <my-box index="5" id="b8" symbol="<%= game.getSymbol(5) %>"><%= game.getSymbol(5) %></my-box>
-                        <my-box index="8" id="b9" symbol="<%= game.getSymbol(8) %>"><%= game.getSymbol(8) %></my-box>
+                        <my-box index="2" id="b7" winnerBoxes="<%= game.winCheck(player).winningBoxes %>" symbol="<%= game.getSymbol(2) %>"><%= game.getSymbol(2) %></my-box>
+                        <my-box index="5" id="b8" winnerBoxes="<%= game.winCheck(player).winningBoxes %>" symbol="<%= game.getSymbol(5) %>"><%= game.getSymbol(5) %></my-box>
+                        <my-box index="8" id="b9" winnerBoxes="<%= game.winCheck(player).winningBoxes %>" symbol="<%= game.getSymbol(8) %>"><%= game.getSymbol(8) %></my-box>
                     </column>
                 </playfield>
-                <p id="text-feld-besetzt" class="hidden">Feld besetzt, nimm ein anderes</p>
+                <p id="text-feld-besetzt" class="hidden">Feld besetzt, nimm ein anderes</p>^
             </form>
         <script src="/game/tictactoe.js"></script>
         <script src="/game/tictactoeUI.js"></script>

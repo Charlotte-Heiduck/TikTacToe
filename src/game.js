@@ -66,7 +66,7 @@ winCheck(player) {
             
             if (a == index + 2) {
                 console.log("Winner Boxes: ", winningBoxes);
-                return true;
+                return { result: true, winningBoxes };
             }
         }
     }
@@ -86,7 +86,7 @@ winCheck(player) {
 
             if (b == index + 6) {
                 console.log("Winner Boxes: ", winningBoxes);
-                return true;
+                return { result: true, winningBoxes };
             }
         }
     }
@@ -103,7 +103,7 @@ winCheck(player) {
         
         if (c == 8) {
             console.log("Winner Boxes: ", winningBoxes);
-            return true;
+            return { result: true, winningBoxes };
         }
     }
 
@@ -119,10 +119,10 @@ winCheck(player) {
         
         if (d == 6) {
             console.log("Winner Boxes: ", winningBoxes);
-            return true;
+            return { result: true, winningBoxes };
         }
     }
-    return false;
+    return { result: false };
 
 }
     getSymbol(index) {

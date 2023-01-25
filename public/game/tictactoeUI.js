@@ -18,7 +18,7 @@ class MyTimer extends HTMLElement {
     
         // prints and shows the time
         if(remainingTime > 0){
-            console.log("time: ", Math.floor(remainingTime));
+            //console.log("time: ", Math.floor(remainingTime));
             this.innerHTML = `${Math.floor(remainingTime)} seconds left!`;
         }
         else{
