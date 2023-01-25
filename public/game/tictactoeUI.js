@@ -1,4 +1,4 @@
-
+// Timer
 class MyTimer extends HTMLElement {
     connectedCallback(){
         console.log("timer started");

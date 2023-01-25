@@ -1,6 +1,7 @@
 let button = document.getElementById("button");
 let text = document.getElementById("text-spielersuche");
 
+// when the button is clicked:
 button.addEventListener("click", () => {
     console.log("button: clicked");
 
@@ -16,6 +17,7 @@ button.addEventListener("click", () => {
         location.href = url;
     });
 
+    // disable button:
     button.setAttribute("disabled", "");
     text.classList.remove("hidden");
 

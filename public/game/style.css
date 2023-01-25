@@ -1,3 +1,4 @@
+/* general directions for the playfield */
 playfield {
     display: flex;
     flex-direction: row;
@@ -8,6 +9,7 @@ playfield {
     flex: 1;
 }
 
+/* hidden text -> apears when certian requirements are met */
 .hidden {
     visibility: hidden;
 
@@ -36,6 +38,7 @@ column {
     flex: 1;
 }
 
+/* building the boxes in the playfield */
 my-box {
     display: flex;
 
