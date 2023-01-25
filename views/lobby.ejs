@@ -1,19 +1,26 @@
 <!DOCTYPE html>
-
 <html>
-    <head>
-        <link rel="stylesheet" href="./style.css">
-
-
-    </head>
-    <body>
+<head>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div id="lobby-container">
         <button id="button">Spiel suchen</button>
 
         <p class="hidden" id="text-spielersuche">Spiel wird gesucht</p>
 
-        <div class="spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
-
-        <script src="./lobby.js"></script>
-    </body>
+        <div id="spinner" class="hidden lds-roller">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <script src="./lobby.js"></script>
+</body>
 
 </html>

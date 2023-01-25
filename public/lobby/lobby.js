@@ -1,5 +1,6 @@
 let button = document.getElementById("button");
 let text = document.getElementById("text-spielersuche");
+let spinner = document.getElementById("spinner");
 
 // when the button is clicked:
 button.addEventListener("click", () => {
@@ -20,6 +21,7 @@ button.addEventListener("click", () => {
     // disable button:
     button.setAttribute("disabled", "");
     text.classList.remove("hidden");
+    spinner.classList.remove("hidden");
 
     console.log("socket: ", WebSocket.readyState)
 })
