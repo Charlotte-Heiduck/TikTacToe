@@ -2,7 +2,6 @@
 playfield {
     display: flex;
     flex-direction: row;
-
     width: 50%;
     margin: 0 auto;
     aspect-ratio: 1 / 1;
@@ -12,25 +11,23 @@ playfield {
 /* hidden text -> appears when certian requirements are met */
 .hidden {
     visibility: hidden;
-
     font-style: normal;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Kanit', sans-serif;
     font-weight: bold;
     font-size: large;
 }
 
 /* used to set the background of the winning boxes to green*/
 .winning-box {
-    background-color: rgb(243, 196, 116);
+    background-color: rgb(240, 204, 137);
 }
 
 UI {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    
     font-style: normal;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Kanit', sans-serif;
     font-weight: bold;
     font-size: large;
     
@@ -52,15 +49,15 @@ my-box {
 
     color: rgb(2, 2, 2);
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 3em;
+    font-size: 2em;
     font-weight: bolder;
     justify-content: center;
     align-items: center;
 
-    border-left: 5px solid black;
-    border-right: 5px solid black;
-    border-top: 5px solid black;
-    border-bottom: 5px solid black;
+    border-left: 4px solid black;
+    border-right: 4px solid black;
+    border-top: 4px solid black;
+    border-bottom: 4px solid black;
 
     user-select: none;
     -webkit-user-drag: none;
