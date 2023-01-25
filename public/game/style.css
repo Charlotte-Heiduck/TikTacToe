@@ -9,7 +9,7 @@ playfield {
     flex: 1;
 }
 
-/* hidden text -> apears when certian requirements are met */
+/* hidden text -> appears when certian requirements are met */
 .hidden {
     visibility: hidden;
 
@@ -17,6 +17,11 @@ playfield {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     font-size: large;
+}
+
+/* used to set the background of the winning boxes to green*/
+.winning-box {
+    background-color: rgb(55, 255, 0);
 }
 
 UI {
