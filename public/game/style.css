@@ -42,7 +42,7 @@ column {
 my-box {
     display: flex;
 
-    background: rgb(255, 255, 255);
+    background: #ffffff;
     flex: 1;
 
     color: rgb(2, 2, 2);
