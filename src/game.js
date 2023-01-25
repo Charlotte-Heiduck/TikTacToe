@@ -81,6 +81,7 @@ winCheck(player) {
                 console.log("Winner Boxes: ", winningBoxes);
                 this.winnerBoxes = winningBoxes;
                 this.winner = player;
+                return;
             }
         }
     }
@@ -104,6 +105,7 @@ winCheck(player) {
                 console.log("Winner Boxes: ", winningBoxes);
                 this.winnerBoxes = winningBoxes;
                 this.winner = player;
+                return;
             }
         }
     }
@@ -124,6 +126,7 @@ winCheck(player) {
             console.log("Winner Boxes: ", winningBoxes);
             this.winnerBoxes = winningBoxes;
             this.winner = player;
+            return;
         }
     }
 
@@ -142,6 +145,7 @@ winCheck(player) {
             console.log("Winner Boxes: ", winningBoxes);
             this.winnerBoxes = winningBoxes;
             this.winner = player;
+            return;
         }
     }
     return { result: false };
