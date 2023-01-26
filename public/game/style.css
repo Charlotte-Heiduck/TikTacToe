@@ -2,7 +2,7 @@
 playfield {
     display: flex;
     flex-direction: row;
-    width: 50%;
+    width: 40%;
     margin: 0 auto;
     aspect-ratio: 1 / 1;
     flex: 1;
@@ -17,9 +17,9 @@ playfield {
     font-size: large;
 }
 
-/* used to set the background of the winning boxes to green*/
+/* used to set the background of the winning boxes to green */
 .winning-box {
-    background-color: rgb(240, 204, 137);
+    background-color: #508952;
 }
 
 UI {
@@ -44,12 +44,12 @@ column {
 my-box {
     display: flex;
 
-    background: #ffffff;
+    background: rgb(221, 239, 216);
     flex: 1;
 
     color: rgb(2, 2, 2);
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 2em;
+    font-size: 3em;
     font-weight: bolder;
     justify-content: center;
     align-items: center;
@@ -58,7 +58,6 @@ my-box {
     border-right: 4px solid black;
     border-top: 4px solid black;
     border-bottom: 4px solid black;
-
     user-select: none;
     -webkit-user-drag: none;
 }
