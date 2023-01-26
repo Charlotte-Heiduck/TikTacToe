@@ -25,6 +25,8 @@ getWs(player){
     return this.playerWebsockets[player];
 }
 
+
+
 isNextPlayer(player) {
     return this.playerInTurn == player;
 }
