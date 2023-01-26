@@ -69,6 +69,32 @@ p {
     text-align: center;
 }
 
+/* revanche button*/
+button {
+    
+    visibility: hidden;
+    font-family: 'Lato', sans-serif;
+    font-weight: 900;
+    display: block;
+    font-size: 26px;
+    border-radius: 12px;
+    border: 3px solid #407d42;
+    transition-duration: 0.4s;
+    width: 40%;
+
+}
+button:enabled:hover {
+    background-color: #68a76a;
+    color: rgb(221, 239, 216);
+}
+button:disabled {
+    border-color: rgb(167, 167, 167);
+}
+/*style of all the hidden text: */
+.visible {
+    visibility: visible;
+}
+
 /* building the boxes in the playfield */
 my-box {
     display: flex;

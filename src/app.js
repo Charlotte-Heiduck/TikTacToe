@@ -44,7 +44,7 @@ app.ws('/playfield/:id/:player', function (ws, req) {
   const game = games.get(req.params.id);
   game.setWs(req.params.player, ws);
 });
-
+     
 app.get('/playfield/:id/:player', function (req, res) {
   const game = games.get(req.params.id);
   if(game){
