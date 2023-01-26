@@ -29,8 +29,9 @@ UI {
     font-style: normal;
     font-family: 'Kanit', sans-serif;
     font-weight: bold;
-    font-size: large;
-    
+    font-size: 21px;
+    padding: 15px 25px;
+    text-align: center;
 }
 
 column {
@@ -40,6 +41,29 @@ column {
     flex: 1;
 }
 
+PI {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-style: normal;
+    font-family: 'Kanit', sans-serif;
+    font-weight: bold;
+    font-size: 21px;
+    padding: 15px 25px;
+    text-align: center;
+}
+
+p {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-style: normal;
+    font-family: 'Kanit', sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 15px 25px;
+    text-align: center;
+}
 /* building the boxes in the playfield */
 my-box {
     display: flex;

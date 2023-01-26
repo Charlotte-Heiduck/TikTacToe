@@ -16,9 +16,6 @@
 
             <current-player>Spieler <%= game.playerInTurn %> ist dran. Du bist Spieler <%= player %></current-player>
 
-            <winner-screen><% if(game.winner != null && game.winner != "none") { %> Spieler <%= game.winner %> hat gewonnen <% } %></winner-screen>
-            <tie-screen><% if(game.winner == "none"){ %> Unentschieden <% } %></tie-screen>
-
             
         </UI>
             <form id="form" method="post" <% if (!game.isNextPlayer(player) || (game.winner != null) ){%> disabled <%}%>>
@@ -41,6 +38,10 @@
                         <my-box class="<% if (game.winnerBoxes.includes(8)) {%> winning-box <%} %>" index="8" id="b9" symbol="<%= game.getSymbol(8) %>"><%= game.getSymbol(8) %></my-box>
                     </column>
                 </playfield>
+                <PI>
+                    <winner-screen><% if(game.winner != null && game.winner != "none") { %> Spieler <%= game.winner %> hat gewonnen <% } %></winner-screen>
+                    <tie-screen><% if(game.winner == "none"){ %> Unentschieden <% } %></tie-screen>
+                </PI>
                 <p id="text-feld-besetzt" class="hidden">Feld besetzt, nimm ein anderes</p>
             </form>
         <% if(game.winner != null) { %> 
