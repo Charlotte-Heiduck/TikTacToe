@@ -16,7 +16,7 @@
 
             <current-player>Spieler <%= game.playerInTurn %> ist dran. Du bist Spieler <%= player %></current-player>
 
-            
+            <button id="button" <% if(game.winner != null) { %> class="visible" <% } %> > Revanche? </button>
         </UI>
             <form id="form" method="post" <% if (!game.isNextPlayer(player) || (game.winner != null) ){%> disabled <%}%>>
                 <input type="hidden" name="index">
@@ -45,7 +45,7 @@
                 <p id="text-feld-besetzt" class="hidden">Feld besetzt, nimm ein anderes</p>
             </form>
         <% if(game.winner != null) { %> 
-            <script> setTimeout(function() {location.href = '/lobby';}, 10000); </script>
+            <script> setTimeout(function() {location.href = '/lobby';}, 25000); </script>
             <% } %>
         <script src="/game/tictactoe.js"></script>
         <script src="/game/tictactoeUI.js"></script>

@@ -22,6 +22,7 @@ class MyTimer extends HTMLElement {
             this.innerHTML = `${Math.floor(remainingTime)} seconds left!`;
         }
         else{
+            // pauses the game when the timer runs out
             let form = document.getElementById("form");
             form.setAttribute("disabled", "");
             form.set
@@ -34,6 +35,15 @@ class MyTimer extends HTMLElement {
 }
 window.customElements.define("my-timer", MyTimer);
 
+let button = document.getElementById("button");
 
+// when the button is clicked:
+button.addEventListener("click", () => {
+    console.log("button: clicked");
 
+    
 
+    // disable button:
+    button.setAttribute("disabled", "");
+
+})
