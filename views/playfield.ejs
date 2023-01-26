@@ -16,7 +16,7 @@
 
             <current-player>Spieler <%= game.playerInTurn %> ist dran. Du bist Spieler <%= player %></current-player>
 
-            <winner-screen><% if((game.winner != null) || (game.winner != "none")){ %> Spieler <%= game.winner %> hat gewonnen <% } %></winner-screen>
+            <winner-screen><% if(game.winner != null && game.winner != "none") { %> Spieler <%= game.winner %> hat gewonnen <% } %></winner-screen>
             <tie-screen><% if(game.winner == "none"){ %> Unentschieden <% } %></tie-screen>
         </UI>
             <form id="form" method="post" <% if (!game.isNextPlayer(player) || (game.winner != null) ){%> disabled <%}%>>

@@ -49,7 +49,12 @@ app.ws('/playfield/:id/:player', function (ws, req) {
 
 app.get('/playfield/:id/:player', function (req, res) {
   const game = games.get(req.params.id);
-  res.render('playfield', { game, result: false, player:req.params.player});
+  if(game){
+    res.render('playfield', { game, result: false, player:req.params.player});
+  }
+  else{
+    res.redirect("/lobby");
+  }
 });
 
 app.get('/lobby', function (req, res) {

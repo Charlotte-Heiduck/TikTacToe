@@ -153,12 +153,10 @@ winCheck(player) {
     // checks if all boxes are filled and no one won yet
     for( let e = 0; e <= 9; e++){
         if(this.fields[e] == 0){
-            console.log("no tie yet | e: ", e);
             break
         }
         if(e == 9){
             this.winner = "none";
-            console.log("there is no winner | e: ", e);
             return;
         }
     }
