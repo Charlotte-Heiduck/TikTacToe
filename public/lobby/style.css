@@ -6,6 +6,14 @@
     justify-content: center;
 }
 
+t{
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    font-size: 20px; 
+    margin: 15px 0;
+    text-align: center;
+}
+
 p{
     font-family: 'Lato', sans-serif;
     font-weight: 700;
