@@ -45,8 +45,9 @@
                 <p id="text-feld-besetzt" class="hidden">Feld besetzt, nimm ein anderes</p>
             </form>
         <% if(game.winner != null) { %> 
+            <notice>sending back to lobby in 20 sec.</notice>
             <script> setTimeout(function() {location.href = '/lobby';}, 10000); </script>
-            <% } %>
+        <% } %>
         <script src="/game/tictactoe.js"></script>
         <script src="/game/tictactoeUI.js"></script>
     </body>

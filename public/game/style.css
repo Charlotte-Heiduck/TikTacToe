@@ -91,3 +91,17 @@ my-box {
     -webkit-user-drag: none;
 }
   
+my-box:hover {
+    background: #73b075;
+  }
+
+notice {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-style: normal;
+    font-family: 'Kanit', sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+}
