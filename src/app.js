@@ -36,7 +36,7 @@ app.ws('/lobby', function (ws, req) {
     ws2.send(JSON.stringify({ gameId: id, player: 2 }));
   } else {
     // puts the player in the waiting list
-    waitingPlayers.push(ws)
+    waitingPlayers.push(ws);
   }
 });
 
@@ -44,6 +44,8 @@ app.ws('/playfield/:id/:player', function (ws, req) {
   const game = games.get(req.params.id);
   game.setWs(req.params.player, ws);
 });
+
+
 
 app.get('/playfield/:id/:player', function (req, res) {
   const game = games.get(req.params.id);

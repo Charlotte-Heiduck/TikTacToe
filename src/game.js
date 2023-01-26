@@ -14,6 +14,7 @@ class Game {
         this.playerInTurn = 1;
         this.winnerBoxes = [];
         this.winner = null;
+        this.countdown = null
     }
 
 setWs(player, ws){
@@ -148,6 +149,20 @@ winCheck(player) {
             return;
         }
     }
+
+    // checks if all boxes are filled and no one won yet
+    for( let e = 0; e <= 9; e++){
+        if(this.fields[e] == 0){
+            console.log("no tie yet | e: ", e);
+            break
+        }
+        if(e == 9){
+            this.winner = "none";
+            console.log("there is no winner | e: ", e);
+            return;
+        }
+    }
+
     return { result: false };
 
 }
@@ -165,6 +180,10 @@ getSymbol(index) {
         return null
     }
 } 
+
+timer(playerInTurn) {
+    
+}
 
 }
 module.exports = Game;

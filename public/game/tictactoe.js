@@ -1,3 +1,4 @@
+
 // text for the "already occupied" message (see line 35)
 let text = document.getElementById("text-feld-besetzt");
 

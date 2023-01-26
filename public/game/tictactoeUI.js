@@ -5,7 +5,7 @@ class MyTimer extends HTMLElement {
         this.startTime = Date.now();
         this.timerMax = parseInt(this.getAttribute("time-max"));
 
-        //updates the timer every 100 seconds
+        //updates the timer every 100 miliseconds
         setInterval(this.writeTime.bind(this), 100);
     }
     writeTime(){
@@ -22,15 +22,15 @@ class MyTimer extends HTMLElement {
             this.innerHTML = `${Math.floor(remainingTime)} seconds left!`;
         }
         else{
+            let form = document.getElementById("form");
+            form.setAttribute("disabled", "");
+
             remainingTime = 0;
-            this.innerHTML = "No time left";
+            this.innerHTML = "Timeout!";
         }
     
     }
-    
-    
 }
-
 window.customElements.define("my-timer", MyTimer);
 
 
