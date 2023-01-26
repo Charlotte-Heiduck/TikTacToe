@@ -24,6 +24,7 @@ class MyTimer extends HTMLElement {
         else{
             let form = document.getElementById("form");
             form.setAttribute("disabled", "");
+            form.set
 
             remainingTime = 0;
             this.innerHTML = "Timeout!";
