@@ -44,6 +44,10 @@ app.ws('/lobby', function (ws, req) {
 app.ws('/playfield/:id/:player', function (ws, req) {
   const game = games.get(req.params.id);
   game.setWs(req.params.player, ws);
+
+  ws.addEventListener("message", (event) => {
+    console.log("message", event.data);
+  })
 });
      
 app.get('/playfield/:id/:player', function (req, res) {
@@ -55,9 +59,6 @@ app.get('/playfield/:id/:player', function (req, res) {
     res.redirect("/lobby");
   }
 
-  ws.addEventListener("message", (event) => {
-    console.log("message", event.data);
-  })
 });
 
 app.get('/lobby', function (req, res) {
