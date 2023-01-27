@@ -35,15 +35,15 @@ class MyTimer extends HTMLElement {
 }
 window.customElements.define("my-timer", MyTimer);
 
-let button = document.getElementById("button");
+if(document.getElementById("button") != null){
+    let button = document.getElementById("button");
+    // when the button is clicked:
+    button.addEventListener("click", () => {
+        console.log("button: clicked");
 
-// when the button is clicked:
-button.addEventListener("click", () => {
-    console.log("button: clicked");
 
-    
 
-    // disable button:
-    button.setAttribute("disabled", "");
-
-})
+        // disable button:
+        button.setAttribute("disabled", "");
+        ws.send("revanche clicked");
+    })}

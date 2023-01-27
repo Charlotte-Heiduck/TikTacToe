@@ -11,6 +11,7 @@ const uuid = require("uuid").v4;
 // storing the active games and players
 const waitingPlayers = [];
 const games = new Map();
+let revanche = 0;
 
 // EJS magic
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -53,6 +54,10 @@ app.get('/playfield/:id/:player', function (req, res) {
   else{
     res.redirect("/lobby");
   }
+
+  ws.addEventListener("message", (event) => {
+    console.log("message", event.data);
+  })
 });
 
 app.get('/lobby', function (req, res) {

@@ -56,5 +56,6 @@ function connectWs (){
     });
 
     console.log("socket: ", WebSocket.readyState)
+    return socket;
 }
-connectWs();
+let ws = connectWs();
