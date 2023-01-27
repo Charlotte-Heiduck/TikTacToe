@@ -12,7 +12,7 @@ class MyBox extends HTMLElement {
 
         let index = this.getAttribute("index");
         let form = this.closest("form");
-        let symbol = this.getAttribute("symbol");
+        let symbol = this.textContent.trim();
         
         console.log("CLICKED", this);
         console.log("Symbol:", symbol);

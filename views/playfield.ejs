@@ -23,19 +23,28 @@
                 
                 <playfield>
                     <column>
-                        <my-box class="<% if (game.winnerBoxes.includes(0)) {%> winning-box <%} %>" index="0" id="b1" symbol="<%= game.getSymbol(0) %>"><%= game.getSymbol(0) %></my-box>
-                        <my-box class="<% if (game.winnerBoxes.includes(3)) {%> winning-box <%} %>" index="3" id="b2" symbol="<%= game.getSymbol(3) %>"><%= game.getSymbol(3) %></my-box>
-                        <my-box class="<% if (game.winnerBoxes.includes(6)) {%> winning-box <%} %>" index="6" id="b3" symbol="<%= game.getSymbol(6) %>"><%= game.getSymbol(6) %></my-box>
+                        <my-box class="<% if (game.winnerBoxes.includes(0)) {%> winning-box <%} %>" index="0" >
+                            <%= game.getSymbol(0) %></my-box>
+                        <my-box class="<% if (game.winnerBoxes.includes(3)) {%> winning-box <%} %>" index="3" >
+                            <%= game.getSymbol(3) %></my-box>
+                        <my-box class="<% if (game.winnerBoxes.includes(6)) {%> winning-box <%} %>" index="6" >
+                            <%= game.getSymbol(6) %></my-box>
                     </column>
                     <column>
-                        <my-box class="<% if (game.winnerBoxes.includes(1)) {%> winning-box <%} %>" index="1" id="b4" symbol="<%= game.getSymbol(1) %>"><%= game.getSymbol(1) %></my-box>
-                        <my-box class="<% if (game.winnerBoxes.includes(4)) {%> winning-box <%} %>" index="4" id="b5" symbol="<%= game.getSymbol(4) %>"><%= game.getSymbol(4) %></my-box>
-                        <my-box class="<% if (game.winnerBoxes.includes(7)) {%> winning-box <%} %>" index="7" id="b6" symbol="<%= game.getSymbol(7) %>"><%= game.getSymbol(7) %></my-box>
+                        <my-box class="<% if (game.winnerBoxes.includes(1)) {%> winning-box <%} %>" index="1" >
+                            <%= game.getSymbol(1) %></my-box>
+                        <my-box class="<% if (game.winnerBoxes.includes(4)) {%> winning-box <%} %>" index="4" >
+                            <%= game.getSymbol(4) %></my-box>
+                        <my-box class="<% if (game.winnerBoxes.includes(7)) {%> winning-box <%} %>" index="7" >
+                            <%= game.getSymbol(7) %></my-box>
                     </column>
                     <column>
-                        <my-box class="<% if (game.winnerBoxes.includes(2)) {%> winning-box <%} %>" index="2" id="b7" symbol="<%= game.getSymbol(2) %>"><%= game.getSymbol(2) %></my-box>
-                        <my-box class="<% if (game.winnerBoxes.includes(5)) {%> winning-box <%} %>" index="5" id="b8" symbol="<%= game.getSymbol(5) %>"><%= game.getSymbol(5) %></my-box>
-                        <my-box class="<% if (game.winnerBoxes.includes(8)) {%> winning-box <%} %>" index="8" id="b9" symbol="<%= game.getSymbol(8) %>"><%= game.getSymbol(8) %></my-box>
+                        <my-box class="<% if (game.winnerBoxes.includes(2)) {%> winning-box <%} %>" index="2" >
+                            <%= game.getSymbol(2) %></my-box>
+                        <my-box class="<% if (game.winnerBoxes.includes(5)) {%> winning-box <%} %>" index="5" >
+                            <%= game.getSymbol(5) %></my-box>
+                        <my-box class="<% if (game.winnerBoxes.includes(8)) {%> winning-box <%} %>" index="8" >
+                            <%= game.getSymbol(8) %></my-box>
                     </column>
                 </playfield>
                 <PI>
